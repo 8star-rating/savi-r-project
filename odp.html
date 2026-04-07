@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operational Documentation and Planning</title>
+    <link rel="stylesheet" type="text/css" href="output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+<script src="https://cdn.tailwindcss.com"></script>
+<body class="bg-white">
+
+    <div class="min-h-screen flex items-center justify-center p-6 -translate-y-48">     
+        <h1 class="text-5xl font-bold text-black -tracking-normal font-[Instrument+Sans] text-left">OPERATIONAL DOCUMENTATION & PLANNING</h1>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-6 w-full max-w-175 mx-auto mt-25 md:max-w-3xl">
+
+        <button type="button" id="iap" class="relative w-4/12 h-44 bg-[#ffb753] flex flex-col items-start justify-start pt-7 pl-5 rounded-[2.5rem] shadow-sm hover:bg-[#f7a736] transition overflow-hidden border-b-mist-500 md:w-4/12">
+            <div class="z-10 uppercase font-bold tracking-wider text-black font-[Instrument+Sans] text-m leading-tight text-left">
+                <p>Incident</p>
+                <p>Action Plans</p>
+            </div>
+            <img src="./images/whitecboard.png" class="absolute -bottom-4 -right-4 w-32 h-32 opacity-100 pointer-events-none">
+        </button>
+
+        <script>
+            document.getElementById('iap').addEventListener('click', function() {
+              window.location.href = 'empty.html';
+            });
+          </script>
+
+        <button type="button" id="aar" class="relative w-4/12 h-44 bg-[#45c066] flex flex-col items-start justify-start pt-7 pl-5 rounded-[2.5rem] shadow-sm hover:bg-[#25b24b] transition overflow-hidden border-b-mist-500 md:w-4/12">
+            <div class="z-10 uppercase font-bold tracking-wider text-black font-[Instrument+Sans] text-m leading-tight text-left">
+                <p>After</p>
+                <p>Activity</p>
+                <p>Reports</p>
+            </div>
+            <img src="./images/whitecboard.png" class="absolute -bottom-4 -right-4 w-32 h-32 opacity-100 pointer-events-none">
+        </button>
+
+        <script>
+            document.getElementById('aar').addEventListener('click', function() {
+              window.location.href = 'empty.html';
+            });
+          </script>
+
+        <button type="button" id="wlr" class="relative w-4/12 h-44 bg-[#2cc5ae] flex flex-col items-start justify-start pt-7 pl-5 rounded-[2.5rem] shadow-sm hover:bg-[#22b8a2] transition overflow-hidden border-b-mist-500 md:w-4/12">
+            <div class="z-10 uppercase font-bold tracking-wider text-black font-[Instrument+Sans] text-m leading-tight text-left">
+                <p>Weekly Log</p>
+                <p>Reports</p>
+            </div>
+            <img src="./images/whitecboard.png" class="absolute -bottom-4 -right-4 w-32 h-32 opacity-100 shadow-black-200 pointer-events-none">
+        </button>
+
+        <script>
+            document.getElementById('wlr').addEventListener('click', function() {
+              window.location.href = 'empty.html';
+            });
+          </script>
+    </div>
+</body> 
+</html>
