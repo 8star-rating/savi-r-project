@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savi-R | Add Weekly Log</title>
+    <link rel="stylesheet" type="text/css" href="output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white font-[Inter] min-h-screen p-6 md:p-12">
+
+    <div class="max-w-4xl mx-auto relative">
+        
+        <button onclick="window.location.href='odp.html'" class="absolute -top-2 -left-16 bg-[#2cc5ae] hover:bg-teal-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-md transition hidden md:flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+        </button>
+
+        <h1 class="text-4xl md:text-5xl font-black text-black uppercase tracking-wide mb-3">ADD WEEKLY LOG REPORT</h1>
+        <div class="h-1 w-full bg-teal-500 mb-8"></div>
+
+        <form action="#" method="POST">
+            
+            <h2 class="text-teal-600 font-extrabold uppercase tracking-widest text-sm mb-3 ml-2">REPORTING PERIOD</h2>
+            <div class="bg-[#fdfaf5] border border-teal-900/10 rounded-[2rem] p-6 md:p-8 mb-8 shadow-sm">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-black font-extrabold text-xs uppercase mb-1 ml-1">Week Starting (Monday)</label>
+                        <input type="date" name="week_start" class="w-full bg-white border border-gray-200 rounded-xl p-3 outline-none focus:border-teal-400 text-sm text-gray-700">
+                    </div>
+                    <div>
+                        <label class="block text-black font-extrabold text-xs uppercase mb-1 ml-1">Week Ending (Sunday)</label>
+                        <input type="date" name="week_end" class="w-full bg-white border border-gray-200 rounded-xl p-3 outline-none focus:border-teal-400 text-sm text-gray-700">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4">
+                    <div>
+                        <label class="block text-black font-extrabold text-xs uppercase mb-1 ml-1">Prepared By</label>
+                        <input type="text" name="prepared_by" placeholder="Your Name / Staff Member" class="w-full bg-white border border-gray-200 rounded-xl p-3 outline-none focus:border-teal-400 text-sm text-gray-700">
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-teal-600 font-extrabold uppercase tracking-widest text-sm mb-3 ml-2">WEEKLY SUMMARY</h2>
+            <div class="bg-[#fdfaf5] border border-teal-900/10 rounded-[2rem] p-6 md:p-8 mb-8 shadow-sm">
+                
+                <div class="mb-4">
+                    <label class="block text-black font-extrabold text-xs uppercase mb-1 ml-1">Activities & Tasks Completed</label>
+                    <textarea name="completed_tasks" rows="4" placeholder="List major tasks finished this week..." class="w-full bg-white border border-gray-200 rounded-2xl p-4 outline-none focus:border-teal-400 text-sm text-gray-700 resize-none"></textarea>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-black font-extrabold text-xs uppercase mb-1 ml-1">Ongoing Tasks / Pending Items</label>
+                    <textarea name="ongoing_tasks" rows="3" placeholder="What is carrying over to next week?" class="w-full bg-white border border-gray-200 rounded-2xl p-4 outline-none focus:border-teal-400 text-sm text-gray-700 resize-none"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-black font-extrabold text-xs uppercase mb-1 ml-1">Incidents or Issues Logged</label>
+                    <textarea name="incidents" rows="2" placeholder="Note any disruptions or minor incidents here..." class="w-full bg-white border border-gray-200 rounded-2xl p-4 outline-none focus:border-teal-400 text-sm text-gray-700 resize-none"></textarea>
+                </div>
+            </div>
+
+            <div class="flex justify-end mt-4">
+                <button type="submit" class="bg-[#004d40] hover:bg-[#002620] text-white font-bold py-4 px-12 rounded-full shadow-lg transition duration-200 tracking-wider">
+                    Submit Log
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
