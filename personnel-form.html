@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savi-R | Personnel Registration</title>
+    <link rel="stylesheet" type="text/css" href="output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-[Inter] bg-white min-h-screen flex items-center justify-center p-6">
+
+    <div class="bg-[#ffb5b5] w-full max-w-lg rounded-[3rem] p-10 shadow-xl flex flex-col items-center">
+        <h1 class="text-3xl font-bold text-gray-800 tracking-widest mb-2">ADD PERSONNEL</h1>
+        <p class="text-gray-800 text-sm font-medium tracking-wide mb-7 text-center">Create a new staff profile for the <span class="text-red-600 font-bold">DRRM</span> Office</p>
+        
+        <form action="#" method="POST" class="w-full space-y-5 font-[Inter] tracking-wide">
+            
+            <div>
+                <label class="block text-red-900 font-bold text-sm mb-1 ml-1">First Name</label>
+                <input type="text" name="first_name" placeholder="Juan" required
+                class="w-full p-4 rounded-xl border-none focus:ring-2 focus:ring-red-400 outline-none text-gray-600 placeholder-gray-300 shadow-inner bg-white">
+            </div>
+
+            <div>
+                <label class="block text-red-900 font-bold text-sm mb-1 ml-1">Last Name</label>
+                <input type="text" name="last_name" placeholder="Dela Cruz" required
+                class="w-full p-4 rounded-xl border-none focus:ring-2 focus:ring-red-400 outline-none text-gray-600 placeholder-gray-300 shadow-inner bg-white">
+            </div>
+
+            <div>
+                <label class="block text-red-900 font-bold text-sm mb-1 ml-1">Official Email Address</label>
+                <input type="email" name="email" placeholder="juan@usep.edu.ph" required
+                class="w-full p-4 rounded-xl border-none focus:ring-2 focus:ring-red-400 outline-none text-gray-600 placeholder-gray-300 shadow-inner bg-white">
+            </div>
+
+            <div>
+                <label class="block text-red-900 font-bold text-sm mb-1 ml-1">System Access Role</label>
+                <select name="system_role" required
+                class="w-full p-4 rounded-xl border-none focus:ring-2 focus:ring-red-400 outline-none text-gray-600 shadow-inner bg-white appearance-none">
+                    <option value="" disabled selected>Select a role...</option>
+                    <option value="Admin">Admin (Full Access)</option>
+                    <option value="Staff">Standard Staff (Limited Access)</option>
+                </select>
+            </div>
+
+            <div class="flex flex-col items-center justify-center pt-4 space-y-4">
+                <button type="submit"
+                    class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-4 rounded-xl shadow-lg transition duration-200 uppercase tracking-widest">
+                    Save Profile
+                </button>
+
+                <button type="button" onclick="window.location.href='admin.html'"
+                    class="w-full bg-white flex items-center justify-center py-3 rounded-xl shadow-sm border border-gray-100 hover:bg-gray-50 transition text-gray-600 font-semibold uppercase tracking-widest text-sm">
+                    Cancel & Return
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
