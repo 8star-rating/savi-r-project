@@ -8,39 +8,53 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+    </style>
 </head>
-<script src="https://cdn.tailwindcss.com"></script>
-<body class="bg-white">
-    <div class="min-h-screen flex items-center justify-center p-6 -translate-y-48">     
-        <h1 class="text-5xl font-bold text-black tracking-widest font-['Inter']"> WELCOME! <span class="text-red-600 tracking-tight">User67</span></h1>
+
+<body class="bg-white min-h-screen relative flex items-center justify-center py-10">
+
+    <div class="w-full max-w-6xl px-8 md:px-16 z-10">
+        <header class="mb-12">
+            <h1 class="text-5xl font-bold text-black tracking-widest font-['Inter']"> WELCOME! 
+                <span class="text-red-600 tracking-tight">User67</span>
+            </h1>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+
+            <button type="button" id="odp" class="group relative aspect-square bg-[#ff5353] rounded-[2.5rem] p-8 flex flex-col items-start text-left drop-shadow-lg hover:drop-shadow-xl hover:-translate-y-1 hover:bg-[#ff3a3a] transition-all overflow-hidden">
+                <div class="z-10 uppercase font-bold tracking-wider text-black font-[Instrument+Sans] text-lg xl:text-xl leading-tight text-left">
+                    <p>Operational</p>
+                    <p>Documentation</p>
+                    <p>And Planning</p>
+                </div>
+                <img src="./images/whitecboard.png" class="absolute -bottom-4 -right-7 w-52 h-52 opacity-100 pointer-events-none">
+            </button>
+
+            <button type="button" id="pprc" class="group relative aspect-square bg-[#8c1919] rounded-[2.5rem] p-8 flex flex-col items-start text-left drop-shadow-lg hover:drop-shadow-xl hover:-translate-y-1 hover:bg-[#601111] transition-all overflow-hidden">
+                <div class="z-10 uppercase font-bold tracking-wider text-white font-[Instrument+Sans] text-lg xl:text-xl leading-tight text-left">
+                    <p>Pre-Hospital</p>
+                    <p>Patient Care</p>
+                    <p>Records</p>
+                </div>
+                <img src="./images/whitecross.png" class="absolute -bottom-9 -right-7 w-56 h-56 opacity-100 pointer-events-none">
+            </button>
+
+            <button type="button" id="prsn" class="group relative aspect-square bg-[#ff674c] rounded-[2.5rem] p-8 flex flex-col items-start text-left drop-shadow-lg hover:drop-shadow-xl hover:-translate-y-1 hover:bg-[#ed5a41] transition-all overflow-hidden">
+                <div class="z-10 uppercase font-bold tracking-wider text-black font-[Instrument+Sans] text-lg xl:text-xl leading-tight text-left">
+                    <p>Personnel</p>
+                </div>
+                <img src="./images/whiteicon.png" class="absolute -bottom-12 -right-3 w-48 h-58 opacity-100 shadow-black-200 pointer-events-none">
+            </button>
+
+        </div>
     </div>
-
-    <div class="flex flex-wrap justify-center gap-6 w-full max-w-175 mx-auto -mt-96 md:max-w-5xl">
-
-        <button type="button" id="odp" class="relative w-6/12 h-44 bg-[#ff5353] flex flex-col items-start justify-start p-5 rounded-[2.5rem] shadow-sm hover:bg-[#ff3a3a] transition overflow-hidden border-b-mist-500 md:w-3/12">
-            <div class="z-10 uppercase font-bold tracking-wider text-black font-[Instrument+Sans] text-m leading-tight text-left">
-                <p>Operational</p>
-                <p>Documentation</p>
-                <p>And Planning</p>
-            </div>
-            <img src="./images/whitecboard.png" class="absolute -bottom-4 -right-4 w-32 h-32 opacity-100 pointer-events-none">
-        </button>
-
-        <button type="button" id="pprc" class="relative w-6/12 h-44 bg-[#8c1919] flex flex-col items-start justify-start p-5 rounded-[2.5rem] shadow-sm hover:bg-[#601111] transition overflow-hidden border-b-mist-500 md:w-3/12">
-            <div class="z-10 uppercase font-bold tracking-wider text-white font-[Instrument+Sans] text-m leading-tight text-left">
-                <p>Pre-Hospital</p>
-                <p>Patient Care</p>
-                <p>Records</p>
-            </div>
-            <img src="./images/whitecross.png" class="absolute -bottom-4 -right-4 w-32 h-32 opacity-100 pointer-events-none">
-        </button>
-
-        <button type="button" id="prsn" class="relative w-6/12 h-44 bg-[#ff674c] flex flex-col items-start justify-start p-6 rounded-[2.5rem] shadow-sm hover:bg-[#ed5a41] transition overflow-hidden border-b-mist-500 md:w-3/12">
-            <div class="z-10 uppercase font-bold tracking-wider text-black font-[Instrument+Sans] text-xl leading-tight text-left">
-                <p>Personnel</p>
-            </div>
-            <img src="./images/whiteicon.png" class="absolute -bottom-8 -right-3 w-28 h-42 opacity-100 shadow-black-200 pointer-events-none">
-        </button>
 
         <script>
         document.getElementById('odp').addEventListener('click', function() {
@@ -55,6 +69,5 @@
               window.location.href = 'personnel.html';
         });
         </script>
-    </div>
 </body> 
 </html>
