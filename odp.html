@@ -20,7 +20,7 @@
     <div class="w-full max-w-6xl px-8 md:px-16 z-10">
         
         <!-- Back Button -->
-        <button class="w-12 h-12 bg-[#ff5252] rounded-full flex items-center justify-center mb-16 shadow-lg hover:scale-110 transition-transform">
+        <button type="button" id="back" class="w-12 h-12 bg-[#ff5252] rounded-full flex items-center justify-center mb-16 shadow-lg hover:scale-110 transition-transform">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
         </button>
 
@@ -35,7 +35,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
 
             <!-- Card 1 -->
-            <button id="iap" class="group relative aspect-square bg-[#ffb753] rounded-[2.5rem] p-8 flex flex-col items-start text-left shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+            <button type="button" id="iap" class="group relative aspect-square bg-[#ffb753] rounded-[2.5rem] p-8 flex flex-col items-start text-left shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
                 <div class="z-10 uppercase font-extrabold tracking-wider text-black text-lg xl:text-xl leading-tight">
                     Incident<br>Action Plans
                 </div>
@@ -43,7 +43,7 @@
             </button>
 
             <!-- Card 2 -->
-            <button id="aar" class="group relative aspect-square bg-[#45c066] rounded-[2.5rem] p-8 flex flex-col items-start text-left shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+            <button type="button" id="aar" class="group relative aspect-square bg-[#45c066] rounded-[2.5rem] p-8 flex flex-col items-start text-left shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
                 <div class="z-10 uppercase font-extrabold tracking-wider text-black text-lg xl:text-xl leading-tight">
                     After<br>Activity<br>Reports
                 </div>
@@ -51,7 +51,7 @@
             </button>
 
             <!-- Card 3 -->
-            <button id="wlr" class="group relative aspect-square bg-[#2cc5ae] rounded-[2.5rem] p-8 flex flex-col items-start text-left shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+            <button type="button" id="wlr" class="group relative aspect-square bg-[#2cc5ae] rounded-[2.5rem] p-8 flex flex-col items-start text-left shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
                 <div class="z-10 uppercase font-extrabold tracking-wider text-black text-lg xl:text-xl leading-tight">
                     Weekly Log<br>Reports
                 </div>
@@ -59,21 +59,22 @@
             </button>
 
         </div>
-    </div>
 
-    <script>
-        document.getElementById('iap').addEventListener('click', function(){
+        <script>
+            document.getElementById('iap').addEventListener('click', function(){
                 window.location.href = 'iap.html';
-        });
-        document.getElementById('aar').addEventListener('click', function(){
+            });
+            document.getElementById('aar').addEventListener('click', function(){
                 window.location.href = 'aar.html';
-        });
-        document.getElementById('wlr').addEventListener('click', function(){
+            });
+            document.getElementById('wlr').addEventListener('click', function(){
                 window.location.href = 'wlr.html';
-        });
-        document.getElementById('back').addEventListener('click', function(){
+            });
+            document.getElementById('back').addEventListener('click', function(){
                 window.location.href = 'user.html';
-        });
-    </script>
+            });
+        </script>
+
+    </div>
 </body> 
 </html>
