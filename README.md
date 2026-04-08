@@ -26,4 +26,5 @@ Front-End Requirements - <br>
   <li>Trying out a dummy login feature without the dropdown in the dummy website where the code has to recognize if the admin is using it or the user which then redirects to the appropriate [ay joke wag na pala, naka code na diay sha]</li>
   <li>Little tweaks for the dummy, nice tung dropdown.</li>
   <li>Little tweaks for the official code especially for the design.</li>
+  <li>Add the Date Added and Author(?).</li>
 </ul>
