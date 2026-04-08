@@ -11,73 +11,75 @@
 </head>
 <body class="bg-white font-[Inter] min-h-screen p-6 md:p-12">
 
-    <div class="max-w-4xl mx-auto relative">
+    <div class="max-w-4xl mx-auto">
         
-        <button onclick="window.location.href='iap.html'" class="absolute -top-2 -left-16 bg-[#ff674c] hover:bg-red-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-md transition hidden md:flex">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-            </svg>
-        </button>
+        <div class="mb-6">
+            <button onclick="window.location.href='iap.html'" class="bg-[#ffb259] hover:bg-orange-400 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-md transition">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6 -ml-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                </svg>
+            </button>
+        </div>
 
         <h1 class="text-4xl md:text-5xl font-black text-black uppercase tracking-wide mb-3">ADD NEW IAP RECORD</h1>
-        <div class="h-1 w-full bg-red-600 mb-8"></div>
+        <div class="h-1 w-full bg-[#ffb259] mb-8"></div>
 
         <form action="#" method="POST">
             
-            <h2 class="text-red-600 font-extrabold uppercase tracking-widest text-sm mb-3 ml-2">INCIDENT DETAILS</h2>
-            <div class="bg-[#fdfaf5] border border-amber-900/10 rounded-[2rem] p-6 md:p-8 mb-8 shadow-sm">
+            <h2 class="text-orange-500 font-extrabold uppercase tracking-widest text-sm mb-3 ml-2">INCIDENT DETAILS</h2>
+            <div class="bg-[#fdfaf5] border border-orange-900/10 rounded-[2rem] p-6 md:p-8 mb-8 shadow-sm">
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                     <div class="col-span-2">
                         <label class="block text-black font-extrabold text-xs uppercase mb-1 ml-1">Incident Name</label>
-                        <input type="text" name="incident_name" placeholder="Incident Name" class="w-full bg-white border border-gray-200 rounded-xl p-3 outline-none focus:border-red-400 text-sm text-gray-700">
+                        <input type="text" name="incident_name" placeholder="Incident Name" class="w-full bg-white border border-gray-200 rounded-xl p-3 outline-none focus:border-[#ffb259] text-sm text-gray-700">
                     </div>
                     <div class="col-span-1">
                         <label class="block text-black font-extrabold text-xs uppercase mb-1 ml-1">Date</label>
-                        <input type="date" name="incident_date" class="w-full bg-white border border-gray-200 rounded-xl p-3 outline-none focus:border-red-400 text-sm text-gray-700">
+                        <input type="date" name="incident_date" class="w-full bg-white border border-gray-200 rounded-xl p-3 outline-none focus:border-[#ffb259] text-sm text-gray-700">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
                         <label class="block text-black font-extrabold text-xs uppercase mb-1 ml-1">Operational Period</label>
-                        <input type="text" name="op_period" placeholder="e.g., 0800H - 1700H" class="w-full bg-white border border-gray-200 rounded-xl p-3 outline-none focus:border-red-400 text-sm text-gray-700">
+                        <input type="text" name="op_period" placeholder="e.g., 0800H - 1700H" class="w-full bg-white border border-gray-200 rounded-xl p-3 outline-none focus:border-[#ffb259] text-sm text-gray-700">
                     </div>
                     <div>
                         <label class="block text-black font-extrabold text-xs uppercase mb-1 ml-1">Location</label>
-                        <input type="text" name="location" placeholder="Complete Address / Area" class="w-full bg-white border border-gray-200 rounded-xl p-3 outline-none focus:border-red-400 text-sm text-gray-700">
+                        <input type="text" name="location" placeholder="Complete Address / Area" class="w-full bg-white border border-gray-200 rounded-xl p-3 outline-none focus:border-[#ffb259] text-sm text-gray-700">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 gap-4">
                     <div>
                         <label class="block text-black font-extrabold text-xs uppercase mb-1 ml-1">Lead Officer / Commander</label>
-                        <input type="text" name="lead_officer" placeholder="Name of Commander" class="w-full bg-white border border-gray-200 rounded-xl p-3 outline-none focus:border-red-400 text-sm text-gray-700">
+                        <input type="text" name="lead_officer" placeholder="Name of Commander" class="w-full bg-white border border-gray-200 rounded-xl p-3 outline-none focus:border-[#ffb259] text-sm text-gray-700">
                     </div>
                 </div>
             </div>
 
-            <h2 class="text-red-600 font-extrabold uppercase tracking-widest text-sm mb-3 ml-2">REMARKS</h2>
-            <div class="bg-[#fdfaf5] border border-amber-900/10 rounded-[2rem] p-6 md:p-8 mb-8 shadow-sm">
+            <h2 class="text-orange-500 font-extrabold uppercase tracking-widest text-sm mb-3 ml-2">REMARKS</h2>
+            <div class="bg-[#fdfaf5] border border-orange-900/10 rounded-[2rem] p-6 md:p-8 mb-8 shadow-sm">
                 
                 <div class="mb-4 w-full md:w-1/3">
                     <label class="block text-black font-extrabold text-xs uppercase mb-1 ml-1">Priority</label>
-                    <input type="text" name="priority" placeholder="Set Level" class="w-full bg-white border border-gray-200 rounded-full p-3 outline-none focus:border-red-400 text-sm text-gray-700">
+                    <input type="text" name="priority" placeholder="Set Level" class="w-full bg-white border border-gray-200 rounded-full p-3 outline-none focus:border-[#ffb259] text-sm text-gray-700">
                 </div>
 
                 <div class="mb-4">
                     <label class="block text-black font-extrabold text-xs uppercase mb-1 ml-1">Primary Objective / Description</label>
-                    <textarea name="description" rows="4" placeholder="Description" class="w-full bg-white border border-gray-200 rounded-2xl p-4 outline-none focus:border-red-400 text-sm text-gray-700 resize-none"></textarea>
+                    <textarea name="description" rows="4" placeholder="Description" class="w-full bg-white border border-gray-200 rounded-2xl p-4 outline-none focus:border-[#ffb259] text-sm text-gray-700 resize-none"></textarea>
                 </div>
 
                 <div>
                     <label class="block text-black font-extrabold text-xs uppercase mb-1 ml-1">Remarks</label>
-                    <textarea name="remarks" rows="3" placeholder="Remarks" class="w-full bg-white border border-gray-200 rounded-2xl p-4 outline-none focus:border-red-400 text-sm text-gray-700 resize-none"></textarea>
+                    <textarea name="remarks" rows="3" placeholder="Remarks" class="w-full bg-white border border-gray-200 rounded-2xl p-4 outline-none focus:border-[#ffb259] text-sm text-gray-700 resize-none"></textarea>
                 </div>
             </div>
 
             <div class="flex justify-end mt-4">
-                <button type="submit" class="bg-[#6b0f0f] hover:bg-[#4a0a0a] text-white font-bold py-4 px-12 rounded-full shadow-lg transition duration-200 tracking-wider">
+                <button type="submit" class="bg-[#c2410c] hover:bg-[#9a3412] text-white font-bold py-4 px-12 rounded-full shadow-lg transition duration-200 tracking-wider">
                     Submit
                 </button>
             </div>

@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
-    <title>Login</title>
+    <title>Savi-R | Login</title>
     <link rel="stylesheet" type="text/css" href="output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend:wght@600&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
         </div>
       </div>
       <p class="text-gray-800 text-sm md:text-base font-medium tracking-wide">
-        File Management System for the <span class="text-red-600 font-bold">DRMM</span> Office
+        <span class="text-red-600 font-bold">UDRMM</span> Office File Management System
       </p>
     </div>
 
@@ -45,45 +45,42 @@
       <div class="bg-[#ffb5b5] w-full max-w-md rounded-[3rem] p-10 shadow-xl flex flex-col items-center">
         <h1 class="text-3xl font-bold text-gray-800 tracking-widest mb-7 p-5">WELCOME!</h1>
         
-        <form class="w-full space-y-6 font-[Inter] tracking-wide">
+        <form id="loginForm" class="w-full space-y-6 font-[Inter] tracking-wide">
           <div>
             <label class="block text-red-900 font-bold text-sm mb-1 ml-1">Username</label>
             <input type="text" placeholder="Enter username" 
-              class="w-full p-4 rounded-xl border-none focus:ring-2 focus:ring-red-400 outline-none text-gray-400 placeholder-gray-300 shadow-inner bg-white">
+              class="w-full p-4 rounded-xl border-none focus:ring-2 focus:ring-red-400 outline-none text-gray-800 placeholder-gray-400 shadow-inner bg-white">
           </div>
 
           <div>
             <label class="block text-red-900 font-bold text-sm mb-1 ml-1">Password</label>
             <input type="password" placeholder="Enter password" 
-              class="w-full p-4 rounded-xl border-none focus:ring-2 focus:ring-red-400 outline-none text-gray-400 placeholder-gray-300 shadow-inner bg-white">
-          </div>
-          <div class="flex flex-col items-center justify-center">
-          <button type="button" id="login1"
-            class="w-7/12 bg-red-500 hover:bg-red-600 text-white font-semibold py-4 rounded-xl shadow-lg transition duration-200 uppercase tracking-widest">
-            Log In
-          </button>
-
-          <script>
-            document.getElementById('login1').addEventListener('click', function() {
-              window.location.href = 'user.html';
-            });
-          </script>
-
-          <div class="relative flex p-4 items-center">
-            <div class="grow border-t border-red-300"></div>
+              class="w-full p-4 rounded-xl border-none focus:ring-2 focus:ring-red-400 outline-none text-gray-800 placeholder-gray-400 shadow-inner bg-white">
           </div>
 
-          <button type="button" id="login2"
-            class="w-7/12 md:w-8/12 bg-white flex items-center justify-center gap-3 py-3 rounded-xl shadow-sm border border-gray-100 hover:bg-gray-50 transition">
-            <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" class="w-6 h-6" alt="Google">
-            <span class="text-black-100 font-medium text-sm">Continue with Google</span>
-          </button>
+          <div>
+            <label class="block text-red-900 font-bold text-sm mb-1 ml-1">Simulate Role (Demo)</label>
+            <select id="roleSelect" class="w-full p-4 rounded-xl border-none focus:ring-2 focus:ring-red-400 outline-none text-gray-800 shadow-inner bg-white appearance-none cursor-pointer">
+                <option value="admin">Admin</option>
+                <option value="user">Standard User</option>
+            </select>
+          </div>
 
-          <script>
-            document.getElementById('login2').addEventListener('click', function() {
-              window.location.href = 'empty.html';
-            });
-          </script>
+          <div class="flex flex-col items-center justify-center pt-2">
+            <button type="submit" id="login1"
+              class="w-7/12 bg-red-500 hover:bg-red-600 text-white font-semibold py-4 rounded-xl shadow-lg transition duration-200 uppercase tracking-widest">
+              Log In
+            </button>
+
+            <div class="relative flex p-4 items-center w-full">
+              <div class="grow border-t border-red-300"></div>
+            </div>
+
+            <button type="button" id="login2"
+              class="w-7/12 md:w-10/12 bg-white flex items-center justify-center gap-3 py-3 rounded-xl shadow-sm border border-gray-100 hover:bg-gray-50 transition">
+              <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" class="w-6 h-6" alt="Google">
+              <span class="text-black-100 font-medium text-sm">Continue with Google</span>
+            </button>
           </div>
         </form>
 
@@ -95,6 +92,29 @@
 
   </div>
 </div>
-</body>
 
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Stop page refresh
+      
+      // Get the selected role
+      const selectedRole = document.getElementById('roleSelect').value;
+      
+      // Save it to the browser memory
+      localStorage.setItem('savi_role', selectedRole);
+      
+      // Route based on role
+      if (selectedRole === 'admin') {
+          window.location.href = 'admin.html';
+      } else {
+          window.location.href = 'user.html';
+      }
+  });
+
+  document.getElementById('login2').addEventListener('click', function() {
+      window.location.href = 'empty.html';
+  });
+</script>
+
+</body>
 </html>

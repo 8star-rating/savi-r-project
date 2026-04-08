@@ -15,11 +15,10 @@
         
         <div class="col-span-1 bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 flex flex-col gap-6">
             <div class="text-center mt-4">
-                <div class="w-24 h-24 bg-[#ffb5b5] rounded-full mx-auto mb-4 flex items-center justify-center text-red-700 text-3xl font-black tracking-tighter shadow-inner">
-                    KL
-                </div>
-                <h2 class="text-xl font-bold text-gray-800">Kim Ian Lipat</h2>
-                <p class="text-red-500 font-semibold text-sm uppercase tracking-wider mt-1">System Admin</p>
+                <div id="profile-initials" class="w-24 h-24 bg-[#ffb5b5] rounded-full mx-auto mb-4 flex items-center justify-center text-red-700 text-3xl font-black tracking-tighter shadow-inner">
+                    </div>
+                <h2 id="profile-name" class="text-xl font-bold text-gray-800"></h2>
+                <p id="profile-role" class="text-red-500 font-semibold text-sm uppercase tracking-wider mt-1"></p>
             </div>
             
             <hr class="border-gray-100 my-2">
@@ -43,7 +42,7 @@
         <div class="col-span-1 md:col-span-2 bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-gray-100">
             <div class="flex justify-between items-center mb-8">
                 <h1 class="text-3xl font-bold text-gray-800 tracking-wide">SETTINGS</h1>
-                <button onclick="window.location.href='user.html'" class="text-gray-400 hover:text-gray-800 font-semibold transition flex items-center gap-2">
+                <button id="dynamic-back-btn" class="text-gray-400 hover:text-gray-800 font-semibold transition flex items-center gap-2 cursor-pointer">
                     ← Back to Dashboard
                 </button>
             </div>
@@ -90,23 +89,23 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
                             <label class="block text-gray-700 font-bold text-sm mb-2 ml-1">First Name</label>
-                            <input type="text" name="first_name" value="Kim Ian" required 
+                            <input type="text" id="input-first-name" name="first_name" required 
                             class="w-full p-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-400 outline-none text-gray-700 bg-gray-50">
                         </div>
                         <div>
                             <label class="block text-gray-700 font-bold text-sm mb-2 ml-1">Last Name</label>
-                            <input type="text" name="last_name" value="Lipat" required 
+                            <input type="text" id="input-last-name" name="last_name" required 
                             class="w-full p-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-400 outline-none text-gray-700 bg-gray-50">
                         </div>
                     </div>
                     <div>
                         <label class="block text-gray-700 font-bold text-sm mb-2 ml-1">Official Email Address</label>
-                        <input type="email" name="email" value="kilipat@usep.edu.ph" required 
+                        <input type="email" id="input-email" name="email" required 
                         class="w-full p-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-400 outline-none text-gray-700 bg-gray-50">
                     </div>
                     <div>
                         <label class="block text-gray-400 font-bold text-sm mb-2 ml-1">System Access Role (Read Only)</label>
-                        <input type="text" value="System Admin" disabled 
+                        <input type="text" id="input-role" disabled 
                         class="w-full p-4 rounded-xl border border-gray-200 text-gray-400 bg-gray-100 cursor-not-allowed">
                     </div>
                     <div class="pt-6">
@@ -121,25 +120,21 @@
     </div>
 
     <script>
+        // Tab Switching Logic
         function switchTab(tabName) {
-            // Get all our elements
             const secPassword = document.getElementById('section-password');
             const secProfile = document.getElementById('section-profile');
             const btnPassword = document.getElementById('btn-password');
             const btnProfile = document.getElementById('btn-profile');
 
-            // Reset styles for both buttons (make them look inactive)
             const inactiveClass = "text-left px-5 py-4 text-gray-500 hover:bg-gray-50 font-semibold rounded-2xl transition tracking-wide";
             const activeClass = "text-left px-5 py-4 bg-red-50 text-red-700 font-bold rounded-2xl transition tracking-wide";
             
             btnPassword.className = inactiveClass;
             btnProfile.className = inactiveClass;
-
-            // Hide both sections
             secPassword.style.display = 'none';
             secProfile.style.display = 'none';
 
-            // Show the correct section and highlight the active button
             if (tabName === 'password') {
                 secPassword.style.display = 'block';
                 btnPassword.className = activeClass;
@@ -148,6 +143,53 @@
                 btnProfile.className = activeClass;
             }
         }
+
+        // Smart Profile Data & Routing Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const role = localStorage.getItem('savi_role') || 'user'; 
+            
+            // 1. Dynamic Back Button
+            const backBtn = document.getElementById('dynamic-back-btn');
+            backBtn.onclick = () => {
+                if (role === 'admin') {
+                    window.location.href = 'admin.html';
+                } else {
+                    window.location.href = 'user.html';
+                }
+            };
+
+            // 2. Populate Profile Data Based on Role
+            const profileInitials = document.getElementById('profile-initials');
+            const profileName = document.getElementById('profile-name');
+            const profileRole = document.getElementById('profile-role');
+            
+            const inputFirstName = document.getElementById('input-first-name');
+            const inputLastName = document.getElementById('input-last-name');
+            const inputEmail = document.getElementById('input-email');
+            const inputRole = document.getElementById('input-role');
+
+            if (role === 'admin') {
+                // Set to Kim Ian Lipat
+                profileInitials.textContent = 'KL';
+                profileName.textContent = 'Kim Ian Lipat';
+                profileRole.textContent = 'System Admin';
+                
+                inputFirstName.value = 'Kim Ian';
+                inputLastName.value = 'Lipat';
+                inputEmail.value = 'kilipat@usep.edu.ph';
+                inputRole.value = 'System Admin';
+            } else {
+                // Set to Juan Dela Cruz
+                profileInitials.textContent = 'JD';
+                profileName.textContent = 'Juan Dela Cruz';
+                profileRole.textContent = 'Staff';
+                
+                inputFirstName.value = 'Juan';
+                inputLastName.value = 'Dela Cruz';
+                inputEmail.value = 'juan@usep.edu.ph';
+                inputRole.value = 'Staff';
+            }
+        });
     </script>
 </body>
 </html>

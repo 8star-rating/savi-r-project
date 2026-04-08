@@ -70,8 +70,15 @@
             document.getElementById('wlr').addEventListener('click', function(){
                 window.location.href = 'wlr.html';
             });
+            
+            // SMART BACK BUTTON LOGIC
             document.getElementById('back').addEventListener('click', function(){
-                window.location.href = 'user.html';
+                const role = localStorage.getItem('savi_role') || 'user';
+                if (role === 'admin') {
+                    window.location.href = 'admin.html';
+                } else {
+                    window.location.href = 'user.html';
+                }
             });
         </script>
 
