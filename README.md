@@ -23,7 +23,7 @@ Front-End Requirements - <br>
 
 <ul>
   <li>A feature was suggested specifically for the Personnel Inputs where admins have to authorize personnel records added by standard users</li>
-  <li>Trying out a dummy login feature without the dropdown in the dummy website where the code has to recognize if the admin is using it or the user which then redirects to the appropriate</li>
+  <li>Trying out a dummy login feature without the dropdown in the dummy website where the code has to recognize if the admin is using it or the user which then redirects to the appropriate [ay joke wag na pala, naka code na diay sha]</li>
   <li>Little tweaks for the dummy, nice tung dropdown.</li>
   <li>Little tweaks for the official code especially for the design.</li>
 </ul>
