@@ -22,7 +22,8 @@ Front-End Requirements - <br>
 <h3>PATCH NOTES...?</h3>
 
 <ul>
-  - A feature was suggested specifically for the Personnel Inputs where admins have to authorize personnel records added by standard users
-  - Trying out a dummy login feature without the dropdown in the dummy website where the code has to recognize if the admin is using it or the user which then redirects to the appropriate
-  - I have yet to re-link and rearrange the pages.
+  <li>A feature was suggested specifically for the Personnel Inputs where admins have to authorize personnel records added by standard users</li>
+  <li>Trying out a dummy login feature without the dropdown in the dummy website where the code has to recognize if the admin is using it or the user which then redirects to the appropriate</li>
+  <li>Little tweaks for the dummy.</li>
+  <li>Little tweaks for the official code.</li>
 </ul>
