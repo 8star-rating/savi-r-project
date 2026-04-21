@@ -11,19 +11,20 @@
         * { box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; margin: 0; }
 
-        /* Sidebar */
-        .sidebar { width: 210px; flex-shrink: 0; background: #450a0a; min-height: 100vh; display: flex; flex-direction: column; }
+        /* Sidebar - Added transition and collapsed state */
+        .sidebar { width: 210px; flex-shrink: 0; background: #450a0a; min-height: 100vh; display: flex; flex-direction: column; transition: margin-left 0.3s ease; }
+        .sidebar.collapsed { margin-left: -210px; }
         .sb-logo { padding: 18px 16px 12px; border-bottom: 0.5px solid rgba(255,255,255,0.07); }
-        .sb-logo-title { font-size: 13px; font-weight: 500; color: #fca5a5; letter-spacing: 0.04em; }
+        .sb-logo-title { font-size: 14px; font-weight: 700; color: #ffffff; letter-spacing: 0.04em; }
         .sb-nav { flex: 1; overflow-y: auto; padding: 8px 0; }
-        .sb-section-title { font-size: 9px; font-weight: 500; color: #7f1d1d; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 14px 4px; }
+        .sb-section-title { font-size: 9px; font-weight: 500; color: #fca5a5; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 14px 4px; }
         .sb-item { display: flex; align-items: center; gap: 8px; padding: 6px 14px; cursor: pointer; transition: background 0.15s; border-left: 2px solid transparent; text-decoration: none; }
         .sb-item:hover { background: rgba(255,255,255,0.06); }
         .sb-item.active { background: rgba(239,68,68,0.2); border-left-color: #ef4444; }
-        .sb-item svg { width: 13px; height: 13px; stroke: #991b1b; fill: none; flex-shrink: 0; }
-        .sb-item.active svg { stroke: #fca5a5; }
-        .sb-item span { font-size: 11px; color: #9f1239; line-height: 1.3; }
-        .sb-item.active span { color: #fecaca; }
+        .sb-item svg { width: 13px; height: 13px; stroke: #fca5a5; fill: none; flex-shrink: 0; }
+        .sb-item.active svg { stroke: #ffffff; }
+        .sb-item span { font-size: 12px; color: #ffffff; line-height: 1.3; }
+        .sb-item.active span { font-weight: 700; color: #ffffff; }
 
         /* Header */
         .topbar { background: #7f1d1d; height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; flex-shrink: 0; border-bottom: 0.5px solid rgba(255,255,255,0.1); }
@@ -84,7 +85,6 @@
 </head>
 <body class="flex h-screen overflow-hidden">
 
-    <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sb-logo">
             <div class="sb-logo-title">Savi-R | UDRRMO</div>
@@ -132,12 +132,14 @@
         </nav>
     </aside>
 
-    <!-- Right Column -->
     <div class="flex flex-col flex-1 overflow-hidden">
 
-        <!-- Top bar -->
         <header class="topbar">
-            <div></div>
+            <div class="flex items-center gap-3">
+                <button id="adminSidebarToggle" class="icon-btn" title="Toggle Sidebar">
+                    <svg viewBox="0 0 24 24" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+                </button>
+            </div>
             <div class="topbar-center">Welcome! <span>Admin67</span></div>
             <div class="topbar-right">
                 <button class="icon-btn" title="Notifications">
@@ -152,10 +154,8 @@
             </div>
         </header>
 
-        <!-- Main content -->
         <main class="main-content">
 
-            <!-- Module cards -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
 
                 <div class="module-card card-red" onclick="window.location.href='odp.html'">
@@ -235,7 +235,6 @@
 
             </div>
 
-            <!-- Bottom panels -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
 
                 <div class="panel">
@@ -308,5 +307,12 @@
         </main>
     </div>
 
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const toggleBtn = document.getElementById('adminSidebarToggle');
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+        });
+    </script>
 </body>
 </html>
